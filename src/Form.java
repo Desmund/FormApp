@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -7,9 +6,10 @@ import java.awt.event.ActionListener;
  * Created by Denis on 06.11.2014.
  */
 public class Form extends JFrame {
+    final DefaultListModel listModel = new DefaultListModel();
     private JPanel rootPanel;
     private JTextField textField;
-    private JList list;
+    private JList list = new JList(listModel);
     private JButton buttonView;
     private JButton buttonAddToList;
     private JLabel lableText;
@@ -24,12 +24,28 @@ public class Form extends JFrame {
         buttonView.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String s = textField.getText();
-                if(!s.equals(""))
-                    new TextView(textField.getText());
-                else
-                    new TextView("Input text at text field!");
+                onView();
             }
         });
+
+        buttonAddToList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onAddToList();
+            }
+        });
+    }
+
+    private void onView(){
+        String s = textField.getText();
+        if(!s.equals(""))
+            new TextView(textField.getText());
+        else
+            new TextView("Input text at text field!");
+    }
+
+    private void onAddToList(){
+        listModel.addElement(textField.getText());
+        textField.setText("");
     }
 }
