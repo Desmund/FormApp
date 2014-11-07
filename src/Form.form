@@ -36,17 +36,6 @@
         </constraints>
         <properties/>
       </component>
-      <component id="4cd28" class="javax.swing.JList" binding="list">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="2" vsize-policy="1" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="40"/>
-          </grid>
-        </constraints>
-        <properties>
-          <layoutOrientation value="1"/>
-          <model/>
-        </properties>
-      </component>
       <component id="9d4ba" class="javax.swing.JButton" binding="buttonView">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
@@ -67,6 +56,19 @@
           <text value="Add to list"/>
         </properties>
       </component>
+      <scrollpane id="2b111">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="63cea" class="javax.swing.JList" binding="list">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>

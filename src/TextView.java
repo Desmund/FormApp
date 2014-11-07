@@ -41,6 +41,7 @@ public class TextView extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
         setSize(250,200);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
